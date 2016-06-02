@@ -3,7 +3,10 @@
 def deploy(componentname) {
   stage 'Deploy ' + componentname
   sh 'echo  ' + componentname + ' release'
-  withEnv(["TEST_STR=ThisisJob${env.JOBNAME}andComponent" + componentname]) {
+
+  def envStr = "TEST_STR=ThisisJob${env.JOBNAME}andComponent" + componentname; 
+
+  withEnv([envStr]) {
     sh 'echo hallo'
     sh 'echo $TEST_STR'
   }
