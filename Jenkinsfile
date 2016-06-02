@@ -13,6 +13,6 @@ node() {
   pipeline = load 'test.groovy'
   pipeline.deploy('lea')
 
-  build job: '/integration-test.develop', wait: false
-  //if (env.BRANCHNAME == 'master') 
+  if (env.BRANCHNAME == 'develop')
+     build job: '/integration-test.develop', wait: false
 }
