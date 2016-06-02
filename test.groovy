@@ -4,7 +4,7 @@ def deploy(componentname) {
   stage 'Deploy ' + componentname
   sh 'echo  ' + componentname + ' release'
 
-  def envStr = "TEST_STR=ThisisJob${env.JOBNAME}andComponent" + componentname; 
+  def envStr = "TEST_STR=ThisisJob${env.JOBNAME}andComponent".concat(componentname); 
 
   withEnv([envStr]) {
     sh 'echo hallo'
