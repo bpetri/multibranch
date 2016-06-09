@@ -12,6 +12,13 @@ node() {
 
   sh 'ls'
 
+
+
+  // check if there is a newer commit
+//  sh 'git fetch
+
+
+i//  if (env.BRANCH_NAME == 'master')
   sh 'sleep 7200'
 
 
