@@ -11,8 +11,9 @@ node() {
 def cause = currentBuild.rawBuild.getCause(Cause.UserIdCause)
 
   echo "---"
-  echo " " + cause.userId
+  echo " " + cause
   echo "----"
+  echo " " + cause.userId
 
   sh 'ls'
 
