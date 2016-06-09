@@ -1,5 +1,5 @@
 node() {
-  //wef
+  // wef
   checkout scm
 
   def han = 'han'
