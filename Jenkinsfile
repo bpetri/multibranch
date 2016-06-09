@@ -8,6 +8,9 @@ node() {
   stage 'simple echo'
   echo han + ' ' + solo
 
+
+println "CAUSE ${currentBuild.rawBuild.getCause(hudson.model.Cause$UserIdCause).properties}"
+
 def cause = currentBuild.rawBuild.getCause(Cause.UserIdCause)
 
   echo "---"
