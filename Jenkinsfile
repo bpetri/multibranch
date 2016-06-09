@@ -10,9 +10,14 @@ node() {
 
   sh 'ls'
 
-  pipeline = load 'test.groovy'
-  pipeline.deploy('lea')
+  sh 'sleep 7200'
 
-  if (env.BRANCH_NAME == 'master')
-     build job: '/integration-test.develop', wait: false
+
+/*
+#  pipeline = load 'test.groovy'
+#  pipeline.deploy('lea')
+
+#  if (env.BRANCH_NAME == 'master')
+#     build job: '/integration-test.develop', wait: false
+*/
 }
