@@ -8,7 +8,7 @@ node() {
   stage 'simple echo'
   echo han + ' ' + solo
 
-def specificCause = currentBuild.rawBuild.getCause(hudson.model.Cause$UserIdCause)
+  def specificCause = currentBuild.rawBuild.getCause(hudson.model.Cause$UserIdCause)
 
   echo "---"
   echo " " + specificCause.userId
