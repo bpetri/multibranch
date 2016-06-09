@@ -12,14 +12,20 @@ node() {
 
   sh 'ls'
 
-
+  sh 'sleep 60'
 
   // check if there is a newer commit
-//  sh 'git fetch
+   sh 'git fetch > GIT_FETCH'
+   fetch=readFile('GIT_FETCH')
+
+   echo fetch.length()
+   echo "----"
+   echo fetch
+   echo "----"
 
 
-i//  if (env.BRANCH_NAME == 'master')
-  sh 'sleep 7200'
+//  if (env.BRANCH_NAME == 'master')
+//  sh 'sleep 7200'
 
 
 /*
