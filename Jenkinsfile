@@ -10,11 +10,11 @@ node() {
 
   sh 'ls'
 
-  sh 'sleep 60'
+  sh 'sleep 10'
 
   // check if there is a newer commit
    sh 'rm -f GIT_FETCH'
-   sh 'git diff HEAD origin/${env.BRANCHNAME} > GIT_FETCH'
+   sh 'git diff HEAD origin/${BRANCH_NAME} > GIT_FETCH'
    fetch=readFile('GIT_FETCH')
 
    echo "----"
