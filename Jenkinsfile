@@ -14,7 +14,8 @@ node() {
 
   // check if there is a newer commit
    sh 'rm -f GIT_FETCH'
-   sh 'git diff HEAD origin/${BRANCH_NAME} > GIT_FETCH'
+   sh 'git fetch && git diff --name-only HEAD origin/${BRANCH_NAME} > GIT_FETCH && cat GIT_FETCH'
+
    fetch=readFile('GIT_FETCH')
 
    echo "----"
