@@ -8,8 +8,20 @@ node() {
   stage 'simple echo'
   echo han + ' ' + solo
 
+// this returns a CopyOnWriteArrayList, safe for iteration
+     def acts = currentBuild.rawBuild.getAllActions()
+        for (act in acts) {
+                 if (act instanceof org.jenkinsci.plugins.workflow.support.steps.input.ApproverAction)
+                   {
+                     echo "XX"
+                       echo act
+                       echo "YY"
+                      }
+                 else {
+                   echo "something else"
+                 }
+        }
 
-println "CAUSE ${currentBuild.rawBuild.getCause(hudson.model.Cause$UserIdCause).properties}"
 
 def cause = currentBuild.rawBuild.getCause(Cause.UserIdCause)
 
