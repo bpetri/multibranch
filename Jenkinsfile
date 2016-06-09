@@ -1,5 +1,7 @@
 node() {
 
+// something added
+
   checkout scm
 
   def han = 'han'
