@@ -19,7 +19,7 @@ node() {
    echo "----"
    echo fetch
    echo "----"
-   echo fetch.length()
+   echo "" + fetch.length()
 
 //  if (env.BRANCH_NAME == 'master')
 //  sh 'sleep 7200'
