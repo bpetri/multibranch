@@ -8,6 +8,14 @@ node() {
   stage 'simple echo'
   echo han + ' ' + solo
 
+def specificCause = currentBuild.rawBuild.getCause(hudson.model.Cause$UserIdCause)
+
+  echo "---"
+  echo " " + specificCause.userId
+  echo "----"
+  echo " " + specificCause
+  echo "----"
+
   sh 'ls'
 
   sh 'sleep 30'
