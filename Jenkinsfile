@@ -28,6 +28,15 @@ git_commit=readFile('GIT_COMMIT')
    echo "----"
    echo "" + fdf.length()
 
+
+   if (fdf.length() == 0) {
+      sh 'git checkout ${BRANCH_NAME}'
+   }
+   else {
+    echo "Sorry there was a commit while trying to release - we are not releasing"
+   }
+
+
 //  if (env.BRANCH_NAME == 'master')
 //  sh 'sleep 7200'
 
