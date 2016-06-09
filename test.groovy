@@ -2,7 +2,7 @@
 
 
 def deploy(componentname) {
-  stage 'Deploy ' + componentname
+  stage 'Dffeploy ' + componentname
   sh 'echo  ' + componentname + ' release'
 
   def envStr = "TEST_STR=ThisisJob${env.JOBNAME}andComponent".concat(componentname); 
