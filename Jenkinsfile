@@ -1,7 +1,5 @@
 node() {
 
-// something added
-
   checkout scm
 
   def han = 'han'
@@ -18,11 +16,10 @@ node() {
    sh 'git fetch > GIT_FETCH'
    fetch=readFile('GIT_FETCH')
 
-   echo fetch.length()
    echo "----"
    echo fetch
    echo "----"
-
+   echo fetch.length()
 
 //  if (env.BRANCH_NAME == 'master')
 //  sh 'sleep 7200'
