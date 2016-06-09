@@ -13,8 +13,13 @@ node() {
   sh 'sleep 10'
 
   // check if there is a newer commit
+
+sh('git rev-parse HEAD > GIT_COMMIT')
+git_commit=readFile('GIT_COMMIT')
+
+  echo "git comit is" + git_commit
    sh 'rm -f GIT_FETCH'
-   sh 'git fetch && git diff --name-only HEAD origin/${BRANCH_NAME} > GIT_FETCH && cat GIT_FETCH'
+   sh ( 'git fetch && git diff --name-only HEAD origin/${BRANCH_NAME} > GIT_FETCH && cat GIT_FETCH')
 
    fetch=readFile('GIT_FETCH')
 
