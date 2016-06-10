@@ -1,4 +1,4 @@
-node() {
+node('build-01') {
 
   pipeline = load 'pipeline.groovy'
   author = ''
