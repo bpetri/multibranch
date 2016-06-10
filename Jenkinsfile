@@ -20,7 +20,8 @@ node() {
 
   if (author != 'cy-bot') {
     try {
-      echo "perform unit-tests
+      echo "perform unit-tests"
+
      //  pipeline.job_unit_tests(false)
     }
     catch(error) {
