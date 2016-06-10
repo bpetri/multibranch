@@ -3,6 +3,7 @@ node() {
   pipeline = load 'pipeline.groovy'
   author = ''
 
+
     try {
       stage 'Checkout'
         checkout scm
