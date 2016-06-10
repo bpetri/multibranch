@@ -8,38 +8,8 @@ node() {
   stage 'simple echo'
   echo han + ' ' + solo
 
-// this returns a CopyOnWriteArrayList, safe for iteration
-     def acts = currentBuild.rawBuild.getAllActions()
-        for (act in acts) {
-                 if (act instanceof org.jenkinsci.plugins.workflow.support.steps.input.ApproverAction)
-                   {
-                     echo "XX"
-                       echo act
-                       echo "YY"
-                      }
-                 else {
-                   echo "something else"
-                 }
-        }
 
 
-def cause = currentBuild.rawBuild.getCause(Cause.UserIdCause)
-
-  echo "---"
-  echo " " + cause
-  echo "----"
-  echo " " + cause.userId
-
-  sh 'ls'
-
-  sh 'sleep 30'
-
-  // check if there is a newer commit
-
-sh('git rev-parse HEAD > GIT_COMMIT')
-git_commit=readFile('GIT_COMMIT')
-
-  echo "git comit is" + git_commit
    sh 'rm -f GIT_FETCH'
    sh ( 'git fetch && git diff --name-only HEAD origin/${BRANCH_NAME} > GIT_DF')
 
