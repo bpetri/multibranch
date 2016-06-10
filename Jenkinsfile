@@ -77,7 +77,7 @@ echo "Jep, something got wrong again - the build broke: ${env.JOB_NAME} ${env.BU
 
 
         //  if (env.BRANCH_NAME == 'master')
-        //  sh 'sleep 7200'
+          sh 'sleep 7200'
 
 
       }
